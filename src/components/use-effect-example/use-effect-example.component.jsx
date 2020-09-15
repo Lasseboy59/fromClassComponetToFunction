@@ -7,16 +7,8 @@ const UseEffectExample = () => {
   const [searchQuery, setSearchQuery] = useState('Bret');
 
   useEffect(() => {
-    const fetchFunc = async () => {
-      const response = await fetch(
-        `https://jsonplaceholder.typicode.com/users?username=${searchQuery}`
-      );
-      const resJson = await response.json();
-      setUser(resJson[0]);
-    };
-
-    fetchFunc();
-  }, [searchQuery]);
+    console.log('hello');
+  }, [user]);
 
   return (
     <Card>
@@ -32,8 +24,8 @@ const UseEffectExample = () => {
           <h3> {user.email} </h3>
         </div>
       ) : (
-        <p>No user found</p>
-      )}
+          <p>No user found</p>
+        )}
     </Card>
   );
 };
