@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Card from '../card/card.component';
 
 const UseStateExample = () => {
-
+  const [name, setName] = useState('Timo');
+  const [address, setAddress] = useState('Helsinki');
   return (
     <Card>
-      <h1>Andrei</h1>
-      <button>Set Name to Timo</button>
+      <h1> {name} </h1>
+      <h1> {address} </h1>
+      <button onClick={() => setName('Andrei')}>Set Name to Andrei</button>
+      <button onClick={() => setAddress('Lohja')}>Set Name to Lohja</button>
     </Card>
   );
 };
 
-export default class StateClassComponent extends React.Component {
+export class StateClassComponent extends React.Component {
   constructor() {
     super();
 
@@ -32,3 +35,5 @@ export default class StateClassComponent extends React.Component {
     );
   }
 }
+
+export default UseStateExample;
